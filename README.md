@@ -7,13 +7,7 @@
 
 [English Doc](README.md) | [简体中文](README_zh_CN.md)
 
-**MachineWolf** is a Test Studio for AI 、Deep Learning or Machine Learning framwork、platform. As the Best-Practice about AIops  or MLOps.
-
-🍃 🍂 🍁 🍄 🐚 🍀 🌾 💐 🌷🦥 🐁 🐀 🐿 🦔 🐾 🐉 🐲 🌵 🎄 🌲 🌳 🌴 🌱
-
-**😄 If it’s helpful to you, please click a Star, it is greatly appreciated!🍻 🥂💕 💞 💓**
-
-🌼 🌻 🌞 🌝 🌛🌈 ☀️ 🌤 ⛅️ 🌥🌏 🪐 💫 ⭐️ 🌟 ✨ 🍐 🍊 🍋 🍌 🍉 🍇 🍓
+**MachineWolf** is a Test Studio for AI 、Deep Learning or Machine Learning framwork、platform.
 
 ### Quickly Start
 
@@ -70,33 +64,6 @@
 * `testreport/result.csv_failures.csv`
 * `testreport/result.csv_exceptions.csv`
 
-### About branch
-
-
-| Branch name |Info|
-| ----------- | -------------------------------------------------------------------- |
-| Master      | The master branch maintains the latest release code of the released product, merges from Release or Feature to the official release history|
-| Feature     | Opened from the Master branch, it is mainly used to develop new features or special test sets, which are maintained according to the responsible module; the naming convention is: feature/#..., each function should correspond to an issue,...is an issue number. |
-| Hotfix      |	Opened from the Master branch, it is mainly used to fix known bugs in the currently released version; please refer to Bugfix for precautions when solving bugs. The naming convention is：hotfix/#... |
-| Release	  | It is opened from the Master branch and is mainly used to release the version. Once the Master branch has enough functions to do a release (or the scheduled release day), fork a release branch from the Master branch. The newly created branch is used to start the release cycle. This branch should only be used for bug fixes, document generation, and other release-oriented tasks. Once the external release work is completed, perform the following three operations: merge the Release branch to the Master; tag the Master with the corresponding version; Release returns, and these changes since the new release branch must be merged back into the Master branch. The naming convention is：release/...，...as release No.|
-| ngihtly     | Build every night to verify the examples and public libraries of the test suite to ensure that the relevant scripts are available.|
-
-> [!IMPORTANT]
-> Master tag To test the version number of the code base itself
-> Releas tag Sync with the release/-x-tag of the product to be tested; if the tested product is 2.0.0-rc1, you can pull out a release/2.0.0-rc1
-> Hotfix tag Same as the hostfix of the tested product, a hotfix can be pulled out during the test/#window stuck
-> Feature tag Independently developed and researched feature prototype verification can pull a feature such as feature/#requirement or bug
-
-* System testing and iterative testing can directly pull the latest code (tag) of the Master branch
-* All Feature, Hotfix, and Release that have been debugged and verified must be merged into the Master
-
-
-### About testsuites
-
-* aisetshub:    About Model validation
-* datasetshub:  About Data set validation
-* testhub:      Platform, component test cases and scripts
-* issuesboard:  Synchronize issues and reports
 
 ### Schema of test studio
 
@@ -138,26 +105,6 @@ In order to avoid information leaks, invalid information floods.
     + cert： `<KEYGEN> 或 <TOKEN>`
     + email： `<EMAIL-NAME@EMAIL-SERVICE.COM>`
 
-### Documents 
-
-For more detailed information about installation guides, tutorials and APIs, please refer to[Docs](docs/zh_CN)
-
-### Release
-
-* **Latest**
-
-    1. Complete package architecture
-    2. Installation and environmental preparation
-    3. Implementation example
-    4. Basic test case set
-
-* **Planning**
-
-    1. Supplement and improve the test script
-    2. Tuning the synchronization process between ZenTao and the test suite Tuning the synchronization process between ZenTao and the test suite
-    3. Debug the synchronization process between argo and test suite
-    4. Supplemental framework, model performance tools and scripts
-    5. Integrate monitoring in k8s
 
 **Please refer to the release notes for details[RELEASE](./RELEASE.md)。**
 
@@ -167,9 +114,4 @@ For more detailed information about installation guides, tutorials and APIs, ple
 
 ### Comunity
 
-Welcome everyone to mention questions and suggestions to github issues
 
-* [Gitter Discussion group](https://gitter.im/banrieen/MachineWolfHome?utm_source=share-link&utm_medium=link&utm_campaign=share-link)
-* [#Machinewolf tag on StackOverflow](https://stackoverflow.com/search?q=%23Machinewolf)
-* Twitter @MachinWolf
-* QQ group 868444294 
