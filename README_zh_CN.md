@@ -2,6 +2,8 @@
 <img src="docs/static/ico.png" width="150"/>
 </p>
 
+MachineWolf 已经转移到 MachineDevil[https://github.com/banrieen/MachineDevil]， 请注意！ 
+
 -----------
 
 [English Doc](README.md) | [简体中文](README_zh_CN.md)
