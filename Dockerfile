@@ -32,9 +32,11 @@ RUN sudo cp -a /etc/apt/sources.list /etc/apt/sources.list.bak  \
     && echo "export PATH=$PATH:/root/.cargo/bin:$DENO_INSTALL/bin" >> /etc/profile  \
     && sudo /bin/bash -c "source /etc/profile" \
     && find . -regex "./[0-9]+" | xargs rm -rf \
-    && rm -rf /tmp/* 
-    
+    && rm -rf /tmp/*    \
+    && ls -la /home/MachineWolf/ |egrep "^\d[0-9]*" | xargs rm -rf  \
+    && rm -rf go1.16.3.linux-amd64.tar.gz
+
 # port
 # EXPOSE 1099 8080 8088 8089
 # Run example
-# docker run -d     -p 8088:8080     --name "ml-workspace"  -v "${PWD}:/workspace"  --env NOTEBOOK_ARGS="--NotebookApp.notebook_dir=/home"   --shm-size 2048m     --restart always     harbor.apulis.cn:8443/testops/machinewolf:latest
+# docker run -d  -p 8088:8080   --name "machinewolf"  -v "${PWD}:/workspace"  --env NOTEBOOK_ARGS="--NotebookApp.notebook_dir=/home"   --shm-size 2048m     --restart always     banrieen/machinewolf:latest

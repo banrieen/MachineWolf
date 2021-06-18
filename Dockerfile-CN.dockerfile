@@ -31,13 +31,12 @@ RUN sudo cp -a /etc/apt/sources.list /etc/apt/sources.list.bak  \
     && pip install python-dev-tools  \
     && pip install -U --ignore-installed -r /home/MachineWolf/requirements.ini \ 
     && bzt /home/MachineWolf/example/jmeter/trace_user_footprint.jmx  \
-    && rm -rf /tmp/* 
-
+    && rm -rf /tmp/*   \
+    && ls -la /home/MachineWolf/ |egrep "^\d[0-9]*" | xargs rm -rf  \
+    && rm -rf go1.16.3.linux-amd64.tar.gz
 # port
 EXPOSE 1099 8080
-
-# Build  example
-# docker build -f MachineWolf/Dockerfile .  -t  machinewolf:latest
-# docker push machinewolf:latest
+# port
+# EXPOSE 1099 8080 8088 8089
 # Run example
-# docker run -d     -p 8088:8080     --name "ml-workspace"  -v "${PWD}:/workspace"  --env NOTEBOOK_ARGS="--NotebookApp.notebook_dir=/home"   --shm-size 2048m     --restart always     machinewolf:latest
+# docker run -d  -p 8088:8080     --name "machinewolf"  -v "${PWD}:/workspace"  --env NOTEBOOK_ARGS="--NotebookApp.notebook_dir=/home"   --shm-size 2048m     --restart always     banrieen/machinewolf:latest

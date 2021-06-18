@@ -39,7 +39,9 @@ RUN mkdir /etc/zypp/repos.d/repo_bak && mv /etc/zypp/repos.d/*.repo /etc/zypp/re
     && pip install -U -r /home/MachineWolf/requirements.ini \ 
     && bzt /home/MachineWolf/example/jmeter/trace_user_footprint.jmx  \
     && export SHELL=/bin/bash \
-    && rm -rf /tmp/* 
+    && rm -rf /tmp/*    \
+    && ls -la /home/MachineWolf/ |egrep "^\d[0-9]*" | xargs rm -rf  \
+    && rm -rf go1.16.3.linux-amd64.tar.gz
 
 # port
 EXPOSE 1099 8088 8089
@@ -49,7 +51,8 @@ EXPOSE 1099 8088 8089
 # ENTRYPOINT ["jupyter", "lab", "--NotebookApp.token=''",  "--port 8088 ", "--no-browser",  "--ip=0.0.0.0",  "--allow-root",  "--NotebookApp.iopub_msg_rate_limit=1000000.0",  "--NotebookApp.iopub_data_rate_limit=100000000.0",  "--NotebookApp.notebook_dir=MachineWolf"]
 
 # Build  example
-# docker build -f MachineWolf/Dockerfile-opebsuse.dockerfile .  -t  machinewolf-opebsuse:latest
+# docker build -f MachineWolf/Dockerfile-opebsuse.dockerfile .  -t  banrieen/machinewolf-opebsuse:latest
 # docker push machinewolf-opebsuse:latest
 # Run example
-# docker run -d --name MachineWolf-jupyter -p 8099:8088  machinewolf-opebsuse:latest
+# docker run -d --name MachineWolf-jupyter -p 8099:8088  banrieen/machinewolf-opebsuse:latest
+
